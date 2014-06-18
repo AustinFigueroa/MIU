@@ -31,22 +31,6 @@ var champSections = [champSection];
 	champTables.setData(champSections);
 	mainWindow.add(champTables);
 
-var border = Ti.UI.createView({
-	backgroundColor: "#333",
-	height: 1,
-	width: pWidth,
-	top: 20
-	});
-	
-var viewContainer = Ti.UI.createScrollView({
-	top: 0,
-	layout: "horizontal",
-	width: pWidth,
-	height: pHeight-border.top-border.height-50,
-	contentWidth: pWidth,
-	showVerticalScrollIndicator: true,
-	backgroundColor: "#fff"
-	});
 
 var getDetail = function (){
 	var detailWindow = Ti.UI.createWindow({
@@ -78,8 +62,8 @@ var getDetail = function (){
 	});
 	var abilitiesText = Ti.UI.createLabel({
 		text: this.abilities,
-		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
-		top: 0,
+		font: {fontSize:14, fontFamily: "Arial", fontColor: "#000"},
+		top: 25,
 		textAlign: "left"
 	});
 	var openWindow = function(){
@@ -87,6 +71,23 @@ var getDetail = function (){
 		title: "Abilities",
 		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
 	    backgroundColor: "#fff"
+	});
+	
+	var border = Ti.UI.createView({
+	backgroundColor: "#333",
+	height: 1,
+	width: pWidth,
+	top: 20
+	});
+	
+	var viewContainer = Ti.UI.createScrollView({
+	top: 0,
+	layout: "horizontal",
+	width: pWidth,
+	height: pHeight-border.top-border.height-50,
+	contentWidth: pWidth,
+	showVerticalScrollIndicator: true,
+	backgroundColor: "#fff"
 	});
 
 	abilitiesWindow.add(border);
@@ -110,9 +111,9 @@ var getDetail = function (){
 
 	var loreText = Ti.UI.createLabel({
 		text: this.lores,
-		font: {fontSize:12, fontFamily: "Arial", fontColor: "#000"},
-		top: 0,
-		textAlign: "left"
+		font: {fontSize:14, fontFamily: "Arial", fontColor: "#000"},
+		top: 25,
+		textAlign: "center"
 	});
 
 var openWindow2 = function(){
@@ -122,8 +123,25 @@ var openWindow2 = function(){
 	    backgroundColor: "#fff"
 	});
 	
-	loreWindow.add(border);
-	loreWindow.add(viewContainer);
+	var border2 = Ti.UI.createView({
+	backgroundColor: "#333",
+	height: 1,
+	width: pWidth,
+	top: 20
+	});
+	
+	var viewContainer2 = Ti.UI.createScrollView({
+	top: 0,
+	layout: "horizontal",
+	width: pWidth,
+	height: pHeight-border2.top-border2.height-50,
+	contentWidth: pWidth,
+	showVerticalScrollIndicator: true,
+	backgroundColor: "#fff"
+	});
+
+	loreWindow.add(border2);
+	loreWindow.add(viewContainer2);
 
 	loreWindow.add(loreText);
 	navWindow.openWindow(loreWindow);
