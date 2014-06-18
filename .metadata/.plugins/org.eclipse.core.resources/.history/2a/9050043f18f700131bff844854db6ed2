@@ -1,0 +1,34 @@
+var champions = {
+	"info":{
+		"Champion Names": "My Information",
+		"championData": [
+		    {
+				"title": "Darius", 
+				"description": " ",
+				"image": "Darius.png"
+			},
+			 {
+				"title": "Nocturne", 
+				"description": " ",
+				"image": "Nocturne.png"
+			},
+			 {
+				"title": "Rengar", 
+				"description": " ",
+				"image": "Rengar.png"
+			},
+			 {
+				"title": "Teemo", 
+				"description": " ",
+				"image": "Teemo.png"
+			},
+			 {
+				"title": "Ziggs", 
+				"description": " ",
+				"image": "Ziggs.png"
+			},
+		]
+	}
+};
+	
+	exports.champData = champions;
