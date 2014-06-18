@@ -87,7 +87,7 @@ var getDetail = function (){
 	height: pHeight-border.top-border.height-50,
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
-	backgroundColor: "#fff"
+	backgroundColor: "#fef"
 	});
 
 	abilitiesWindow.add(border);
@@ -134,10 +134,10 @@ var openWindow2 = function(){
 	top: 0,
 	layout: "horizontal",
 	width: pWidth,
-	height: pHeight-border2.top-border2.height-50,
+	height: pHeight-border.top-border2.height-50,
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
-	backgroundColor: "#fff"
+	backgroundColor: "#fef"
 	});
 
 	loreWindow.add(border2);

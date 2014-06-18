@@ -1,7 +1,6 @@
 Ti.UI.setBackgroundColor("#fff");
 
 var pWidth = Ti.Platform.displayCaps.platformWidth;
-var pHeight = Ti.Platform.displayCaps.platformHeight;
 
 var data = require("Json");
 
@@ -60,12 +59,6 @@ var getDetail = function (){
 	width: pWidth,
 	height:50
 	});
-	var abilitiesText = Ti.UI.createLabel({
-		text: this.abilities,
-		font: {fontSize:14, fontFamily: "Arial", fontColor: "#000"},
-		top: 25,
-		textAlign: "left"
-	});
 	var openWindow = function(){
 		var abilitiesWindow = Ti.UI.createWindow({
 		title: "Abilities",
@@ -73,27 +66,13 @@ var getDetail = function (){
 	    backgroundColor: "#fff"
 	});
 	
-	var border = Ti.UI.createView({
-	backgroundColor: "#333",
-	height: 1,
-	width: pWidth,
-	top: 20
+	var abilitiesText = Ti.UI.createLabel({
+		text: this.abilities,
+		font: {fontSize:14, fontFamily: "Arial", fontColor: "#000"},
+		top: 25,
+		textAlign: "left"
 	});
 	
-	var viewContainer = Ti.UI.createScrollView({
-	top: 0,
-	layout: "horizontal",
-	width: pWidth,
-	height: pHeight-border.top-border.height-50,
-	contentWidth: pWidth,
-	showVerticalScrollIndicator: true,
-	backgroundColor: "#fff"
-	});
-
-	abilitiesWindow.add(border);
-	abilitiesWindow.add(viewContainer);
-	
-	abilitiesWindow.add(abilitiesText);
 	navWindow.openWindow(abilitiesWindow);
 	};
 	
@@ -109,43 +88,20 @@ var getDetail = function (){
 	height:50
 });
 
-	var loreText = Ti.UI.createLabel({
-		text: this.lores,
-		font: {fontSize:14, fontFamily: "Arial", fontColor: "#000"},
-		top: 25,
-		textAlign: "center"
-	});
-
 var openWindow2 = function(){
     var loreWindow = Ti.UI.createWindow({
 		title: "Lore",
 		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
 	    backgroundColor: "#fff"
 	});
-	
-	var border2 = Ti.UI.createView({
-	backgroundColor: "#333",
-	height: 1,
-	width: pWidth,
-	top: 20
+	var loreText = Ti.UI.createLabel({
+		text: this.lores,
+		font: {fontSize:14, fontFamily: "Arial", fontColor: "#000"},
+		top: 25,
+		textAlign: "left"
 	});
-	
-	var viewContainer2 = Ti.UI.createScrollView({
-	top: 0,
-	layout: "horizontal",
-	width: pWidth,
-	height: pHeight-border2.top-border2.height-50,
-	contentWidth: pWidth,
-	showVerticalScrollIndicator: true,
-	backgroundColor: "#fff"
-	});
-
-	loreWindow.add(border2);
-	loreWindow.add(viewContainer2);
-
 	loreWindow.add(loreText);
-	navWindow.openWindow(loreWindow);
-
+	 navWindow.openWindow(loreWindow);
 };
 	loreButton.addEventListener("click", openWindow2);
 	

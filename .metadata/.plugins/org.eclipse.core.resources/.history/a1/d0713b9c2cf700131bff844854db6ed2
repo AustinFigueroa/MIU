@@ -134,7 +134,7 @@ var openWindow2 = function(){
 	top: 0,
 	layout: "horizontal",
 	width: pWidth,
-	height: pHeight-border2.top-border2.height-50,
+	height: pHeight-border.top-border2.height-50,
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
 	backgroundColor: "#fff"
