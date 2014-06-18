@@ -110,7 +110,7 @@ var getDetail = function (){
 
 	var loreText = Ti.UI.createLabel({
 		text: this.lores,
-		font: {fontSize:11, fontFamily: "Arial", fontColor: "#000"},
+		font: {fontSize:12, fontFamily: "Arial", fontColor: "#000"},
 		top: 0,
 		textAlign: "left"
 	});
