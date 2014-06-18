@@ -74,6 +74,7 @@ var openlogin = function(){
 	navWindow.openWindow(loginWindow);
 
 };
+	loginButton.addEventListener("click", openlogin);
 
 
 var openlogin = function(){

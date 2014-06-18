@@ -74,96 +74,7 @@ var openlogin = function(){
 	navWindow.openWindow(loginWindow);
 
 };
-
-
-var openlogin = function(){
-    var loginWindow = Ti.UI.createWindow({
-		title: "Login",
-		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
-	    backgroundColor: "#fff"
-	});
-	
-	var img3 = Ti.UI.createImageView({
-	image : 'signup-logo2.png',
-	width : pWidth,
-	height : 125,
-	top : 50,
-});
-var emailview2 = Ti.UI.createLabel({
-  text:"Email",
-  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
-  backgroundColor: "#fff",
-  bottom: 225 , 
-  left: 10,
-});
-var textField3 = Ti.UI.createTextField({
-  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  color: '#336699',
-  bottom: 220 , 
-  left: 100,
-  width: 200,
-  height: 35
-});
-var passwordview2 = Ti.UI.createLabel({
-  text:"Password",
-  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
-  backgroundColor: "#fff",
-  bottom: 190 , 
-  left: 10,
-});
-var textField4 = Ti.UI.createTextField({
-  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  color: '#336699',
-  bottom: 185 , 
-  left: 100,
-  width: 200,
-  height: 35
-});
-
-var fillin2 = Ti.UI.createLabel({
-	text: "Login to League of Legends® Data Base Enter Email and Password",
-	top: img3.height+ img3.top + 5,
-	textAlign: "center"
-});
-
-var mybutton2 = Ti.UI.createButton({
-	text: "Cancel",
-	backgroundColor: "#fff",
-	textAlign: "center",
-	font: {fontSize: 14, fontFamily: "Arial"},
-	height: 50,
-	width: 100,
-	bottom: 35,
-	left: 60,
-});
-
-var mySecondbutton2 = Ti.UI.createButton({
-	title: "OK",
-	backgroundColor: "#fff",
-	textAlign: "center",
-	font: {fontSize: 14, fontFamily: "Arial"},
-	height: 50,
-	width: 75,
-	bottom: 35,
-	right: 60,
-});
-
-
-	loginWindow.add(mybutton2);
-	loginWindow.add(mySecondbutton2);
-	loginWindow.add(fillin2);
-    loginWindow.add(passwordview2);
-    loginWindow.add(textField3);
-    loginWindow.add(emailview2);
-    loginWindow.add(textField4);
-	loginWindow.add(img3);
-	
-	navWindow.openWindow(loginWindow);
-
-};
 	loginButton.addEventListener("click", openlogin);
-
-
 
 
 var opensignup = function(){
@@ -222,7 +133,7 @@ var mybutton = Ti.UI.createButton({
 	textAlign: "center",
 	font: {fontSize: 14, fontFamily: "Arial"},
 	height: 50,
-	width: 100,
+	width: 75,
 	bottom: 35,
 	left: 60,
 });
@@ -237,8 +148,6 @@ var mySecondbutton = Ti.UI.createButton({
 	bottom: 35,
 	right: 60,
 });
-
-
 	signupWindow.add(mybutton);
 	signupWindow.add(mySecondbutton);
 	signupWindow.add(fillin);
