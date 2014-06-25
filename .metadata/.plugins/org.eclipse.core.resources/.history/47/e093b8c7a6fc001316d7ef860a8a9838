@@ -1,0 +1,68 @@
+Ti.UI.setBackgroundColor("#670000");
+
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
+var win = Ti.UI.createWindow({
+	backgroundColor: "#670000"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: win
+});
+
+//var data = require("Json Data");
+
+var imageView = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+});
+
+var loginButton = Ti.UI.createButton({
+	title: "Login",
+	backgroundColor: "#000",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 225,
+	width: 175,
+	height:50
+	});
+	
+var SignupButton = Ti.UI.createButton({
+	title: "Sign Up",
+	backgroundColor: "#000",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 175,
+	width: pWidth,
+	height:50
+	});
+	
+var view = Ti.UI.createView({
+	backgroundColor: "#e9e8e8",
+	borderColor: "#e9e8e8",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: 125,
+	width: pWidth,
+	bottom: 35,
+});
+
+var label = Ti.UI.createLabel({
+	text: "Forget your Username/Password? Then click HERE",
+	font: {fontSize: 14, fontFamily: "Arial"},
+	textAlign: "center",
+	top: 25,
+	right: 25,
+	left: 25,
+	bottom:25
+});
+
+view.add(label);
+win.add(view);
+win.add(loginButton);	
+win.add(SignupButton);
+win.add(imageView);
+navWin.open();

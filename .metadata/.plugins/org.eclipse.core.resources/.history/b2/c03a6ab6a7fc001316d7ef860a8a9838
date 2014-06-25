@@ -1,0 +1,228 @@
+Ti.UI.setBackgroundColor("#333");
+
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
+var win = Ti.UI.createWindow({
+	backgroundColor: "#670000"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: win
+});
+
+//var data = require("Json Data");
+
+var imageView = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+});
+
+var loginButton = Ti.UI.createButton({
+	title: "Login",
+	backgroundColor: "#000",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 225,
+	width: 175,
+	height:50
+	});
+	
+var SignupButton = Ti.UI.createButton({
+	title: "Sign Up",
+	backgroundColor: "#000",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 175,
+	width: 175,
+	height:50
+	});
+	
+var view = Ti.UI.createView({
+	backgroundColor: "#333",
+	borderColor: "#333",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: 125,
+	width: 250,
+	bottom: 35,
+});
+
+var label = Ti.UI.createLabel({
+	text: "Forget your Username/Password? Then click HERE",
+	font: {fontSize: 14, fontFamily: "Arial"},
+	textAlign: "center",
+	top: 25,
+	right: 25,
+	left: 25,
+	bottom:25
+});
+
+//Sceens Info
+
+var openlogin = function(){
+    var loginWindow = Ti.UI.createWindow({
+		title: "Login",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+	var img3 = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+	
+var emailview2 = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 225 , 
+  left: 10,
+});
+var textField3 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 220 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+var passwordview2 = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 190 , 
+  left: 10,
+});
+var textField4 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 185 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var fillin2 = Ti.UI.createLabel({
+	text: "Login to Devil's Lil Helper Enter Email and Password",
+	top: img3.height+ img3.top + 5,
+	textAlign: "center"
+});
+
+
+var mySecondbutton2 = Ti.UI.createButton({
+	title: "OK",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 100,
+	width: pWidth,
+	bottom: 35,
+});
+
+mySecondbutton2.addEventListener("click", openMain);
+
+	loginWindow.add(mySecondbutton2);
+	loginWindow.add(fillin2);
+    loginWindow.add(passwordview2);
+    loginWindow.add(textField3);
+    loginWindow.add(emailview2);
+    loginWindow.add(textField4);
+	loginWindow.add(img3);
+	
+	navWindow.openWindow(loginWindow);
+
+};
+	loginButton.addEventListener("click", openlogin);
+
+
+
+
+var opensignup = function(){
+    var signupWindow = Ti.UI.createWindow({
+		title: "Sign Up",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+	var img2 = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+});
+var emailview = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 225 , 
+  left: 10,
+});
+var textField = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 220 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+var passwordview = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 190 , 
+  left: 10,
+});
+var textField2 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 185 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var fillin = Ti.UI.createLabel({
+	text: "Sign Up to Devil's Lil Helper Enter Email and Password",
+	top: img2.height+ img2.top + 5,
+	textAlign: "center"
+});
+
+var mySecondbutton = Ti.UI.createButton({
+	title: "OK",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 100,
+	width: pWidth,
+	bottom: 35,
+});
+
+
+mySecondbutton.addEventListener("click", openlogin);
+
+
+
+	signupWindow.add(mySecondbutton);
+	signupWindow.add(fillin);
+    signupWindow.add(passwordview);
+    signupWindow.add(textField2);
+    signupWindow.add(emailview);
+    signupWindow.add(textField);
+	signupWindow.add(img2);
+	
+	navWindow.openWindow(signupWindow);
+
+};
+
+
+
+view.add(label);
+win.add(view);
+win.add(loginButton);	
+win.add(SignupButton);
+win.add(imageView);
+navWin.open();

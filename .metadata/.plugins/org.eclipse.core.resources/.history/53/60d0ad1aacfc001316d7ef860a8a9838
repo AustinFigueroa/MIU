@@ -1,0 +1,421 @@
+Ti.UI.setBackgroundColor("#333");
+
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
+var win = Ti.UI.createWindow({
+	backgroundColor: "#fff"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: win
+});
+
+
+// Main List of Settings
+
+
+var openMain = function(){
+
+
+
+var data = require("Json");
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Settings",
+	backgroundColor: "#f5f5f5"
+});
+
+var settingTables = Ti.UI.createTableView({
+	top:0
+	});
+
+	if(Ti.Platform.name === "iPhone OS"){
+		settingTables.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+	}
+
+var settingSection = Ti.UI.createTableViewSection({
+	headerTitle: "Personalize your own Settings",
+	footerTitle: "The way you want them!!"
+});
+
+var settingSections = [champSection];
+	settingTables.setData(champSections);
+	mainWindow.add(champTables);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var data = require("Json Data");
+
+var imageView = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+});
+
+var loginButton = Ti.UI.createButton({
+	title: "Login",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 225,
+	width: 175,
+	height:50
+	});
+	
+var SignupButton = Ti.UI.createButton({
+	title: "Sign Up",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 175,
+	width: 175,
+	height:50
+	});
+	
+var view = Ti.UI.createView({
+	backgroundColor: "#333",
+	borderColor: "#333",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: 125,
+	width: 250,
+	bottom: 35,
+});
+
+var label = Ti.UI.createLabel({
+	text: "Forget your Username/Password? Then click HERE",
+	font: {fontSize: 14, fontFamily: "Arial"},
+	textAlign: "center",
+	top: 25,
+	right: 25,
+	left: 25,
+	bottom:25
+});
+
+//Sceens Info
+
+
+
+// Login
+
+var openlogin = function(){
+    var loginWindow = Ti.UI.createWindow({
+		title: "Login",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+	var img3 = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+	});
+	
+var emailview2 = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 190 , 
+  left: 10,
+});
+var textField3 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 185 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+var passwordview2 = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 155 , 
+  left: 10,
+});
+var textField4 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 150 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var fillin2 = Ti.UI.createLabel({
+	text: "Login to Devil's Lil Helper Enter Email and Password",
+	top: img3.height+ img3.top + 5,
+	textAlign: "center"
+});
+
+
+var mySecondbutton2 = Ti.UI.createButton({
+	title: "OK",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 100,
+	width: pWidth,
+	bottom: 35,
+});
+
+mySecondbutton2.addEventListener("click", openMain);
+
+	loginWindow.add(mySecondbutton2);
+	loginWindow.add(fillin2);
+    loginWindow.add(passwordview2);
+    loginWindow.add(textField3);
+    loginWindow.add(emailview2);
+    loginWindow.add(textField4);
+	loginWindow.add(img3);
+	
+	navWin.openWindow(loginWindow);
+
+};
+	loginButton.addEventListener("click", openlogin);
+
+
+
+
+//   Signup
+
+
+var opensignup = function(){
+    var signupWindow = Ti.UI.createWindow({
+		title: "Sign Up",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+	var img2 = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+});
+var emailview = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 190 , 
+  left: 10,
+});
+var textField = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 185 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+var passwordview = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 155 , 
+  left: 10,
+});
+var textField2 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 150 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var fillin = Ti.UI.createLabel({
+	text: "Sign Up to Devil's Lil Helper Enter Email and Password",
+	top: img2.height+ img2.top + 5,
+	textAlign: "center"
+});
+
+var mySecondbutton = Ti.UI.createButton({
+	title: "OK",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 100,
+	width: pWidth,
+	bottom: 35,
+});
+
+
+mySecondbutton.addEventListener("click", openlogin);
+
+
+
+	signupWindow.add(mySecondbutton);
+	signupWindow.add(fillin);
+    signupWindow.add(passwordview);
+    signupWindow.add(textField2);
+    signupWindow.add(emailview);
+    signupWindow.add(textField);
+	signupWindow.add(img2);
+	
+	navWin.openWindow(signupWindow);
+
+};
+
+SignupButton.addEventListener("click", opensignup);
+
+
+
+// Forgot Password/ Email
+
+var  inforetrieval = function(){
+	
+	var infoWindow = Ti.UI.createWindow({
+		title: "",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+	var pic = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+});
+
+var emailaddress = Ti.UI.createLabel({
+	text: "Enter your email address and we'll send you a temporary password to recover your account",
+	top: pic.height+ pic.top + 5,
+	textAlign: "center"
+});
+
+var email = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 170 , 
+  left: 10,
+});
+var emailtextField = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 165 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var mybutton = Ti.UI.createButton({
+	title: "OK",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 100,
+	width: pWidth,
+	bottom: 35,
+});
+
+
+
+
+
+	infoWindow.add(mybutton);
+	infoWindow.add(emailaddress);
+    infoWindow.add(email);
+    infoWindow.add(emailtextField);
+	infoWindow.add(pic);
+	
+	mybutton.addEventListener("click", newpass);
+	
+	navWin.openWindow(infoWindow);
+};
+
+
+view.addEventListener("click", inforetrieval);
+var newpass = function(){
+    var newPassWindow = Ti.UI.createWindow({
+		title: "",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+	var pic2 = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+});
+var passview = Ti.UI.createLabel({
+  text:"Old Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 190 , 
+  left: 10,
+});
+var textField5 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 185 , 
+  left: 150,
+  width: 150,
+  height: 35
+});
+var passview2 = Ti.UI.createLabel({
+  text:"New Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 155 , 
+  left: 10,
+});
+var textField6 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  bottom: 150 , 
+  left: 150,
+  width: 150,
+  height: 35
+});
+
+var fill = Ti.UI.createLabel({
+	text: "Put in your old pre existing Password and then insert the new Password.",
+	top: pic2.height+ pic2.top + 5,
+	textAlign: "center"
+});
+
+var submitbutton = Ti.UI.createButton({
+	title: "Submit",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 100,
+	width: pWidth,
+	bottom: 35,
+});
+
+	newPassWindow.add(submitbutton);
+	newPassWindow.add(fill);
+    newPassWindow.add(passview2);
+    newPassWindow.add(textField6);
+    newPassWindow.add(passview);
+    newPassWindow.add(textField5);
+	newPassWindow.add(pic2);
+	
+submitbutton.addEventListener("click", openlogin);
+	navWin.openWindow(newPassWindow);
+
+};
+
+view.add(label);
+win.add(view);
+win.add(loginButton);	
+win.add(SignupButton);
+win.add(imageView);
+navWin.open();

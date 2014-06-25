@@ -1,9 +1,11 @@
 =run
-LAST_LAUNCH_TIMESTAMP=1403114340963
+LAST_LAUNCH_TIMESTAMP=1403722620668
 MIU1406_Figueroa_Austin_AboutMe\:launchMode=run
 MIU1406_Figueroa_Austin_AboutMe\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch)
 MIU1406_Week\ 3_Figueroa_Austin\:launchMode=run
 MIU1406_Week\ 3_Figueroa_Austin\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
+MIU1406_Week\ 4_Figueroa_Austin\:launchMode=run
+MIU1406_Week\ 4_Figueroa_Austin\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103

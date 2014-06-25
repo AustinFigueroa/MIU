@@ -1,0 +1,189 @@
+Ti.UI.setBackgroundColor("#333");
+
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
+var win = Ti.UI.createWindow({
+	backgroundColor: "#fff"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: win
+});
+
+var emailview = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  top: 50 , 
+  left: 10,
+});
+var textField = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "abc@yahoo.com",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 45 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var addFocus = function(){
+	if (textField.value === ""){
+		textField.value = "abc@yahoo.com";
+	}
+};
+
+var passwordview = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  top:  95, 
+  left: 10,
+});
+
+var textField2 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "**********",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 90 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+
+var addFocus2 = function(){
+	if (textField2.value === ""){
+		textField2.value = "**********";
+	}
+};
+
+
+var loginButton = Ti.UI.createButton({
+	title: "Login",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 225,
+	width: 175,
+	height:50
+	});
+	
+var SignupButton = Ti.UI.createButton({
+	title: "Sign Up",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 175,
+	width: 175,
+	height:50
+	});
+	
+
+
+var fillin = Ti.UI.createLabel({
+	text: "Login to Devil's Lil Helper Enter Email and Password",
+	top:  5,
+	textAlign: "center"
+});
+
+	win.add(fillin);
+    win.add(passwordview);
+    win.add(textField);
+    win.add(emailview);
+    win.add(textField2);
+	
+	textField.addEventListener("blur",addFocus);
+	textField2.addEventListener("blur",addFocus2);
+	
+
+//   Signup
+
+
+var opensignup = function(){
+    var signupWindow = Ti.UI.createWindow({
+		title: "Sign Up",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+var emailview = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 190 , 
+  left: 10,
+});
+var textField = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "abc@yahoo.com",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  bottom: 185 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+var passwordview = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  bottom: 155 , 
+  left: 10,
+});
+var textField2 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "**********",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  bottom: 150 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var fillin = Ti.UI.createLabel({
+	text: "Sign Up to Devil's Lil Helper Enter Email and Password",
+	top: img2.height+ img2.top + 5,
+	textAlign: "center"
+});
+
+var mySecondbutton = Ti.UI.createButton({
+	title: "OK",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 100,
+	width: pWidth,
+	bottom: 35,
+});
+
+
+mySecondbutton.addEventListener("click", openlogin);
+
+
+
+	signupWindow.add(mySecondbutton);
+	signupWindow.add(fillin);
+    signupWindow.add(passwordview);
+    signupWindow.add(textField2);
+    signupWindow.add(emailview);
+    signupWindow.add(textField);
+	signupWindow.add(img2);
+	
+	navWin.openWindow(signupWindow);
+
+};
+
+SignupButton.addEventListener("click", opensignup);
+
+
+
+
+
+win.add(loginButton);	
+win.add(SignupButton);
+navWin.open();

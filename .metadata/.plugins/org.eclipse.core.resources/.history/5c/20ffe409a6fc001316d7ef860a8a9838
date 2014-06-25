@@ -1,0 +1,46 @@
+Ti.UI.setBackgroundColor("#670000");
+
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
+var win = Ti.UI.createWindow({
+	backgroundColor: "#670000"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: win
+});
+
+//var data = require("Json Data");
+
+var imageView = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	top : 25,
+});
+
+var loginButton = Ti.UI.createButton({
+	title: "Login",
+	backgroundColor: "#000",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 225,
+	width: 100,
+	height:50
+	});
+	
+var SignupButton = Ti.UI.createButton({
+	title: "Sign Up",
+	backgroundColor: "#000",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 175,
+	width: 100,
+	height:50
+	});
+
+win.add(loginButton);	
+win.add(SignupButton);
+win.add(imageView);
+navWin.open();
