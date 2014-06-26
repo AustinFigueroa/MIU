@@ -81,7 +81,15 @@ var SignupButton = Ti.UI.createButton({
 	width: 175,
 	height:50
 	});
-	
+var exitButton	= Ti.UI.createButton({
+	title: "Close Button",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 0,
+	width: 175,
+	height:50
+	});
 
 
 var fillin = Ti.UI.createLabel({
@@ -95,11 +103,372 @@ var fillin = Ti.UI.createLabel({
     win.add(textField);
     win.add(emailview);
     win.add(textField2);
-	
+    
+    
 	textField.addEventListener("blur",addFocus);
 	textField2.addEventListener("blur",addFocus2);
-	
 
+
+var opentheme = function(){
+	var themeWin= Ti.UI.createWindow({
+		title: "Make your To Do List",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+	var todofield = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put what you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 20 ,
+  left:5,
+  width: 270,
+  height: 35
+});
+	var todofield2 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put what you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 60 , 
+  left:5,
+  width: 270,
+  height: 35
+});
+	var todofield3 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put what you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 100 , 
+  left:5,
+  width: 270,
+  height: 35
+});
+
+var todofield4 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put what you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 140 ,
+  left:5, 
+  width: 270,
+  height: 35
+});
+
+var todofield5 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put what you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 180 , 
+  left:5,
+  width: 270,
+  height: 35
+});
+var todofield6 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put what you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 220 , 
+  left:5,
+  width: 270,
+  height: 35
+});
+var todofield7 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put what you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 260 ,
+  left:5, 
+  width: 270,
+  height: 35
+});
+
+var img = Ti.UI.createImageView({
+	image : 'Images/Logo.png',
+	width : pWidth,
+	height : 200,
+	bottom: 0,
+});
+
+	themeWin.add(img);	
+	themeWin.add(todofield);
+	themeWin.add(todofield2);
+	themeWin.add(todofield3);
+	themeWin.add(todofield4);
+	themeWin.add(todofield5);
+	themeWin.add(todofield6);
+	themeWin.add(todofield7);
+
+	var checkbox = Ti.UI.createButton({
+    title: '',
+    top: 25,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false 
+});
+ 
+
+checkbox.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkbox.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkbox.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+	var checkbox2 = Ti.UI.createButton({
+    title: '',
+    top: 65,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false 
+});
+ 
+
+checkbox2.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkbox2.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkbox2.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+	var checkbox3 = Ti.UI.createButton({
+    title: '',
+    top: 105,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false 
+});
+ 
+
+checkbox3.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkbox3.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkbox3.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+	var checkbox4 = Ti.UI.createButton({
+    title: '',
+    top: 145,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false 
+});
+ 
+
+checkbox4.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkbox4.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkbox4.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+	var checkbox5 = Ti.UI.createButton({
+    title: '',
+    top: 185,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false 
+});
+ 
+
+checkbox5.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkbox5.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkbox5.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+	var checkbox6 = Ti.UI.createButton({
+    title: '',
+    top: 225,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false 
+});
+ 
+checkbox6.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkbox6.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkbox6.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+	var checkbox7 = Ti.UI.createButton({
+    title: '',
+    top: 265,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false 
+});
+
+checkbox7.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkbox7.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkbox7.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+
+
+themeWin.add(checkbox);
+themeWin.add(checkbox2);
+themeWin.add(checkbox3);
+themeWin.add(checkbox4);
+themeWin.add(checkbox5);
+themeWin.add(checkbox6);
+themeWin.add(checkbox7);
+
+	navWin.openWindow(themeWin);
+};
+
+loginButton.addEventListener('click', opentheme);
 //   Signup
 
 
@@ -181,7 +550,7 @@ var mySecondbutton = Ti.UI.createButton({
 });
 
 
-//mySecondbutton.addEventListener("click", openlogin);
+mySecondbutton.addEventListener("click", opentheme);
 
 
 
@@ -199,12 +568,53 @@ var mySecondbutton = Ti.UI.createButton({
 
 };
 
+var openexit = function(){
+	var exitWin = Ti.UI.createWindow({
+		title: "Devil's Lil Helper",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	var myView = Ti.UI.createView({
+	backgroundColor: "#000",
+	borderColor: "#000",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: 100,
+	width: 150,
+	bottom: 35,
+});
+
+var myText = Ti.UI.createLabel({
+	text:"Yes",
+	color:"red",
+	font: {fontSize: 30, fontFamily: "Arial"}
+});
+
+var myThirdText = Ti.UI.createLabel({
+	text: "Are you sure you want to exit the application?",
+	font: {fontSize: 36, fontFamily: "Arial"},
+	textAlign: "center",
+	top: 25,
+	right: 25,
+	left: 25,
+	bottom:25
+});
+
+exitWin.add(myView);
+myView.add(myText);
+exitWin.add(myThirdText);
+navWin.openWindow(exitWin);
+
+
+};
+
+
 SignupButton.addEventListener("click", opensignup);
+exitButton.addEventListener("click", openexit);
 
 
 
-
-
+win.add(exitButton);
 win.add(loginButton);	
 win.add(SignupButton);
 navWin.open();

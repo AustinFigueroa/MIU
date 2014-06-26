@@ -1,0 +1,528 @@
+Ti.UI.setBackgroundColor("#333");
+
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
+var win = Ti.UI.createWindow({
+	backgroundColor: "#fff"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: win
+});
+
+var emailview = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  top: 100 , 
+  left: 10,
+});
+var textField = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "abc@yahoo.com",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 95 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var addFocus = function(){
+	if (textField.value === ""){
+		textField.value = "abc@yahoo.com";
+	}
+};
+
+var passwordview = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  top:  145, 
+  left: 10,
+});
+
+var textField2 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "**********",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 140 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+
+var addFocus2 = function(){
+	if (textField2.value === ""){
+		textField2.value = "**********";
+	}
+};
+
+
+var loginButton = Ti.UI.createButton({
+	title: "Login",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 225,
+	width: 175,
+	height:50
+	});
+	
+var SignupButton = Ti.UI.createButton({
+	title: "Sign Up",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 175,
+	width: 175,
+	height:50
+	});
+	
+
+
+var fillin = Ti.UI.createLabel({
+	text: "Login to Devil's Lil Helper Enter Email and Password",
+	top:  5,
+	textAlign: "center"
+});
+
+	win.add(fillin);
+    win.add(passwordview);
+    win.add(textField);
+    win.add(emailview);
+    win.add(textField2);
+    
+    
+	textField.addEventListener("blur",addFocus);
+	textField2.addEventListener("blur",addFocus2);
+
+
+var opentheme = function(){
+	var themeWin= Ti.UI.createWindow({
+		title: "What you got to do?",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+	var todofield = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 140 ,
+  width: pWidth,
+  height: 35
+});
+	var todofield2 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 100 , 
+  width: pWidth,
+  height: 35
+});
+	var todofield3 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 60 , 
+  width: pWidth,
+  height: 35
+});
+
+var todofield4 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 180 , 
+  width: pWidth,
+  height: 35
+});
+
+var todofield5 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 220 , 
+  width: pWidth,
+  height: 35
+});
+var todofield6 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 260 , 
+  width: pWidth,
+  height: 35
+});
+var todofield7 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 300 , 
+  width: pWidth,
+  height: 35
+});
+var todofield8 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 340 , 
+  width: pWidth,
+  height: 35
+});
+var todofield9 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 380 , 
+  width: pWidth,
+  height: 35
+});
+var todofield10 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 420 , 
+  width: pWidth,
+  height: 35
+});
+var todofield11 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 20 , 
+  width: pWidth,
+  height: 35
+});
+	
+	themeWin.add(todofield);
+	themeWin.add(todofield2);
+	themeWin.add(todofield3);
+	themeWin.add(todofield4);
+	themeWin.add(todofield5);
+	themeWin.add(todofield6);
+	themeWin.add(todofield7);
+	themeWin.add(todofield8);
+	themeWin.add(todofield9);
+	themeWin.add(todofield10);
+	themeWin.add(todofield11);
+
+var submitButton = Ti.UI.createButton({
+	title: "Submit",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 40,
+	width: pWidth,
+	bottom: 5,
+});	
+
+themeWin.add(submitButton);
+
+var todolist = function(){
+	
+	var listWin= Ti.UI.createWindow({
+		title: "Your To Do List",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+  var list1 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 20 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list2 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 60 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list3 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 100 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list4 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 140 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list5 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 180 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list6 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 220 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list7 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 260 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list8 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 300 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list9 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 340 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list10 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 380 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+    var list11 = Ti.UI.createView({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  borderColor: "#000",
+  value: "Put in the information you have to do here.",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 420 , 
+  left:5,
+  width: 270,
+  height: 35
+  });
+	var checkbox = Ti.UI.createButton({
+    title: '',
+    top: 10,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+    value: false //value is a custom property in this casehere.
+});
+ 
+//Attach some simple on/off actions
+checkbox.on = function() {
+    this.backgroundColor = '#007690';
+    this.title='\u2713';
+    this.value = true;
+};
+ 
+checkbox.off = function() {
+    this.backgroundColor = '#aaa';
+    this.title='';
+    this.value = false;
+};
+ 
+checkbox.addEventListener('click', function(e) {
+    if(false == e.source.value) {
+        e.source.on();
+    } else {
+        e.source.off();
+    }
+});
+navWin.openWindow(listWin);
+listWin.add(checkbox);
+listWin.add(list1);
+listWin.add(list2);
+listWin.add(list3);
+listWin.add(list4);
+listWin.add(list5);
+listWin.add(list6);
+listWin.add(list7);
+listWin.add(list8);
+listWin.add(list9);
+listWin.add(list10);
+listWin.add(list11);
+};
+submitButton.addEventListener("click", todolist);
+
+	navWin.openWindow(themeWin);
+};
+
+loginButton.addEventListener('click', opentheme);
+//   Signup
+
+
+var opensignup = function(){
+
+var signupWindow = Ti.UI.createWindow({
+		title: "Sign Up",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	
+var name = Ti.UI.createLabel({
+  text:"Name",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  top: 100 , 
+  left: 10,
+});
+var textField5 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "John Doe",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 95 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+	
+var emailview2 = Ti.UI.createLabel({
+  text:"Email",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  top: 145 , 
+  left: 10,
+});
+var textField3 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "abc@yahoo.com",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 140 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+var passwordview2 = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  top: 190 , 
+  left: 10,
+});
+var textField4 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "**********",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 185 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+var fillin2 = Ti.UI.createLabel({
+	text: "Sign Up to Devil's Lil Helper Enter Email and Password",
+	top: 5,
+	textAlign: "center"
+});
+
+var mySecondbutton = Ti.UI.createButton({
+	title: "OK",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 100,
+	width: pWidth,
+	bottom: 35,
+});
+
+
+mySecondbutton.addEventListener("click", opentheme);
+
+
+
+	
+	signupWindow.add(name);
+	signupWindow.add(textField5);
+	signupWindow.add(mySecondbutton);
+	signupWindow.add(fillin2);
+    signupWindow.add(passwordview2);
+    signupWindow.add(textField3);
+    signupWindow.add(emailview2);
+    signupWindow.add(textField4);
+	
+	navWin.openWindow(signupWindow);
+
+};
+
+SignupButton.addEventListener("click", opensignup);
+
+
+
+
+
+win.add(loginButton);	
+win.add(SignupButton);
+navWin.open();
