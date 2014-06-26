@@ -11,13 +11,6 @@ var navWin = Ti.UI.iOS.createNavigationWindow({
 	window: win
 });
 
-var image = Ti.UI.createImageView({
-	image : 'Images/Logo.png',
-	width : pWidth,
-	height : 200,
-	bottom: 0,
-});
-
 var emailview = Ti.UI.createLabel({
   text:"Email",
   font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
@@ -27,7 +20,7 @@ var emailview = Ti.UI.createLabel({
 });
 var textField = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "abc@yahoo.com",
+  value: "abc@yahoo.com",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 95 , 
@@ -41,6 +34,33 @@ var addFocus = function(){
 		textField.value = "abc@yahoo.com";
 	}
 };
+
+var passwordview = Ti.UI.createLabel({
+  text:"Password",
+  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
+  backgroundColor: "#fff",
+  top:  145, 
+  left: 10,
+});
+
+var textField2 = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  value: "**********",
+  font: {fontSize: 14, fontFamily: "Arial"},
+  color: '#336699',
+  top: 140 , 
+  left: 100,
+  width: 200,
+  height: 35
+});
+
+
+var addFocus2 = function(){
+	if (textField2.value === ""){
+		textField2.value = "**********";
+	}
+};
+
 
 var testresults;
  
@@ -58,32 +78,52 @@ function checkemail(emailAddress)
     }
     return (testresults);
 };
-
-var passwordview = Ti.UI.createLabel({
-  text:"Password",
-  font: {fontSize:20, fontFamily: "Arial", fontColor: "#000"},
-  backgroundColor: "#fff",
-  top:  145, 
-  left: 10,
-});
-
-var textField2 = Ti.UI.createTextField({
-  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "**********",
-  font: {fontSize: 14, fontFamily: "Arial"},
-  color: '#336699',
-  top: 140 , 
-  left: 100,
-  width: 200,
-  height: 35
-});
-
-
-var addFocus2 = function(){
-	if (textField2.value === ""){
-		textField2.value = "**********";
-	}
+ 
+var createReq = Titanium.Network.createHTTPClient();
+createReq.onload = function()
+{
+    if (this.responseText == "Insert failed" || this.responseText == "That username or email already exists")
+    {
+        createBtn.enabled = true;
+        createBtn.opacity = 1;
+        alert(this.responseText);
+    } 
+    else
+    {
+        var alertDialog = Titanium.UI.createAlertDialog({
+            title: 'Alert',
+            message: this.responseText,
+            buttonNames: ['OK']
+        });
+        alertDialog.show();
+        alertDialog.addEventListener('click',function(e)
+        {
+            win.tabGroup.setActiveTab(0);
+        });
+    }
 };
+ 
+createBtn.addEventListener('click',function(e)
+{
+    if (username.value != '' && email.value != '')
+    {
+            if (!checkemail(email.value))
+            {
+                alert("Please enter a valid email");
+            }
+            else
+            {
+                alert("Email is valid");
+            }
+        }
+    else
+    {
+        alert("All fields are required");
+    }
+});
+    
+
+
 
 
 var loginButton = Ti.UI.createButton({
@@ -91,7 +131,7 @@ var loginButton = Ti.UI.createButton({
 	backgroundColor: "#fff",
 	textAlign: "center",
 	font: {fontSize: 20, fontFamily: "Arial"},
-	bottom: 270,
+	bottom: 225,
 	width: 175,
 	height:50
 	});
@@ -101,10 +141,20 @@ var SignupButton = Ti.UI.createButton({
 	backgroundColor: "#fff",
 	textAlign: "center",
 	font: {fontSize: 20, fontFamily: "Arial"},
-	bottom: 220,
+	bottom: 175,
 	width: 175,
 	height:50
 	});
+var exitButton	= Ti.UI.createButton({
+	title: "Close Button",
+	backgroundColor: "#fff",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	bottom: 0,
+	width: 175,
+	height:50
+	});
+
 
 var fillin = Ti.UI.createLabel({
 	text: "Login to Devil's Lil Helper Enter Email and Password",
@@ -132,7 +182,7 @@ var opentheme = function(){
 	
 	var todofield = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "Put what you have to do here.",
+  value: "Put what you have to do here.",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 20 ,
@@ -142,7 +192,7 @@ var opentheme = function(){
 });
 	var todofield2 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "Put what you have to do here.",
+  value: "Put what you have to do here.",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 60 , 
@@ -152,7 +202,7 @@ var opentheme = function(){
 });
 	var todofield3 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "Put what you have to do here.",
+  value: "Put what you have to do here.",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 100 , 
@@ -163,7 +213,7 @@ var opentheme = function(){
 
 var todofield4 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "Put what you have to do here.",
+  value: "Put what you have to do here.",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 140 ,
@@ -174,7 +224,7 @@ var todofield4 = Ti.UI.createTextField({
 
 var todofield5 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "Put what you have to do here.",
+  value: "Put what you have to do here.",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 180 , 
@@ -184,7 +234,7 @@ var todofield5 = Ti.UI.createTextField({
 });
 var todofield6 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "Put what you have to do here.",
+  value: "Put what you have to do here.",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 220 , 
@@ -194,7 +244,7 @@ var todofield6 = Ti.UI.createTextField({
 });
 var todofield7 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "Put what you have to do here.",
+  value: "Put what you have to do here.",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 260 ,
@@ -482,24 +532,7 @@ themeWin.add(checkbox7);
 	navWin.openWindow(themeWin);
 };
 
-loginButton.addEventListener('click',function(e)
-{
-    if (textField.value != '')
-        {
-            if (!checkemail(textField.value))
-            {
-                alert("Please enter a valid email");
-            }
-            else
-            {
-                
-            opentheme();
-            }
-        }
-    
-    });
-
-
+loginButton.addEventListener('click', opentheme);
 //   Signup
 
 
@@ -520,7 +553,7 @@ var name = Ti.UI.createLabel({
 });
 var textField5 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "John Doe",
+  value: "John Doe",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 95 , 
@@ -538,7 +571,7 @@ var emailview2 = Ti.UI.createLabel({
 });
 var textField3 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "abc@yahoo.com",
+  value: "abc@yahoo.com",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 140 , 
@@ -555,7 +588,7 @@ var passwordview2 = Ti.UI.createLabel({
 });
 var textField4 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "**********",
+  value: "**********",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 185 , 
@@ -581,22 +614,8 @@ var mySecondbutton = Ti.UI.createButton({
 });
 
 
-mySecondbutton.addEventListener('click',function(e)
-{
-    if (textField3.value != '')
-        {
-            if (!checkemail(textField3.value))
-            {
-                alert("Please enter a valid email");
-            }
-            else
-            {
-                
-            opentheme();
-            }
-        }
-    
-    });
+mySecondbutton.addEventListener("click", opentheme);
+
 
 
 	
@@ -613,9 +632,53 @@ mySecondbutton.addEventListener('click',function(e)
 
 };
 
-SignupButton.addEventListener("click", opensignup);
+var openexit = function(){
+	var exitWin = Ti.UI.createWindow({
+		title: "Devil's Lil Helper",
+		font: {fontSize:10, fontFamily: "Arial", fontColor: "#000"},
+	    backgroundColor: "#fff"
+	});
+	var myView = Ti.UI.createView({
+	backgroundColor: "#000",
+	borderColor: "#000",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: 100,
+	width: 150,
+	bottom: 35,
+});
 
-win.add(image);
+var myText = Ti.UI.createLabel({
+	text:"Yes",
+	color:"red",
+	font: {fontSize: 30, fontFamily: "Arial"}
+});
+
+var myThirdText = Ti.UI.createLabel({
+	text: "Are you sure you want to exit the application?",
+	font: {fontSize: 36, fontFamily: "Arial"},
+	textAlign: "center",
+	top: 25,
+	right: 25,
+	left: 25,
+	bottom:25
+});
+
+exitWin.add(myView);
+myView.add(myText);
+exitWin.add(myThirdText);
+navWin.openWindow(exitWin);
+
+
+};
+
+
+SignupButton.addEventListener("click", opensignup);
+exitButton.addEventListener("click", openexit);
+
+
+
+win.add(exitButton);
 win.add(loginButton);	
 win.add(SignupButton);
 navWin.open();

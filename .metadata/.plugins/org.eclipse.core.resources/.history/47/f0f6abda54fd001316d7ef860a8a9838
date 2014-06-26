@@ -27,7 +27,7 @@ var emailview = Ti.UI.createLabel({
 });
 var textField = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "abc@yahoo.com",
+  value: "abc@yahoo.com",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 95 , 
@@ -69,7 +69,7 @@ var passwordview = Ti.UI.createLabel({
 
 var textField2 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "**********",
+  value: "**********",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 140 , 
@@ -91,7 +91,7 @@ var loginButton = Ti.UI.createButton({
 	backgroundColor: "#fff",
 	textAlign: "center",
 	font: {fontSize: 20, fontFamily: "Arial"},
-	bottom: 270,
+	bottom: 225,
 	width: 175,
 	height:50
 	});
@@ -101,7 +101,7 @@ var SignupButton = Ti.UI.createButton({
 	backgroundColor: "#fff",
 	textAlign: "center",
 	font: {fontSize: 20, fontFamily: "Arial"},
-	bottom: 220,
+	bottom: 175,
 	width: 175,
 	height:50
 	});
@@ -490,14 +490,14 @@ loginButton.addEventListener('click',function(e)
             {
                 alert("Please enter a valid email");
             }
-            else
-            {
-                
-            opentheme();
-            }
-        }
-    
-    });
+            // else
+            // {
+                // loginButton.addEventListener('click', opentheme);
+            // }
+       
+		}
+});
+
 
 
 //   Signup
@@ -520,7 +520,7 @@ var name = Ti.UI.createLabel({
 });
 var textField5 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "John Doe",
+  value: "John Doe",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 95 , 
@@ -538,7 +538,7 @@ var emailview2 = Ti.UI.createLabel({
 });
 var textField3 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "abc@yahoo.com",
+  value: "abc@yahoo.com",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 140 , 
@@ -555,7 +555,7 @@ var passwordview2 = Ti.UI.createLabel({
 });
 var textField4 = Ti.UI.createTextField({
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-  hintText: "**********",
+  value: "**********",
   font: {fontSize: 14, fontFamily: "Arial"},
   color: '#336699',
   top: 185 , 
@@ -581,22 +581,8 @@ var mySecondbutton = Ti.UI.createButton({
 });
 
 
-mySecondbutton.addEventListener('click',function(e)
-{
-    if (textField3.value != '')
-        {
-            if (!checkemail(textField3.value))
-            {
-                alert("Please enter a valid email");
-            }
-            else
-            {
-                
-            opentheme();
-            }
-        }
-    
-    });
+mySecondbutton.addEventListener("click", opentheme);
+
 
 
 	
